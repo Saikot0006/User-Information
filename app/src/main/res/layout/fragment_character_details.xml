@@ -67,7 +67,7 @@
                     android:textColor="@color/white"
                     android:textSize="12sp"
                     android:visibility="@{String.valueOf(viewModel.characterDetails.actor).length() == 0 ? View.GONE : View.VISIBLE}"
-                    android:text="@{String.valueOf(viewModel.characterDetails.actor).toUpperCase()}"
+                    android:text='@{"Actor Name: " + String.valueOf(viewModel.characterDetails.actor).toUpperCase()}'
                     app:layout_constraintEnd_toEndOf="@id/characterNameTv"
                     app:layout_constraintStart_toStartOf="@id/characterNameTv"
                     app:layout_constraintTop_toBottomOf="@id/characterNameTv" />
@@ -80,7 +80,7 @@
                     android:textColor="@color/white"
                     android:textSize="12sp"
                     android:visibility="@{String.valueOf(viewModel.characterDetails.house).length() == 0 ? View.GONE : View.VISIBLE}"
-                    android:text="@{String.valueOf(viewModel.characterDetails.house).toUpperCase()}"
+                    android:text='@{"House: " + viewModel.characterDetails.house.toUpperCase()}'
                     app:layout_constraintEnd_toEndOf="@id/characterNameTv"
                     app:layout_constraintStart_toStartOf="@id/characterNameTv"
                     app:layout_constraintTop_toBottomOf="@id/characterActorNameTv" />
@@ -161,6 +161,45 @@
                     app:layout_constraintEnd_toEndOf="@id/characterNameTv"
                     app:layout_constraintStart_toStartOf="@id/characterNameTv"
                     app:layout_constraintTop_toBottomOf="@+id/wizardTv" />
+
+                <TextView
+                    android:id="@+id/hairColorTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:visibility="@{String.valueOf(viewModel.characterDetails.hairColour).length() == 0 ? View.GONE : View.VISIBLE}"
+                    android:text='@{"Hair Color: ".concat(String.valueOf(viewModel.characterDetails.hairColour).toUpperCase())}'
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/characterNameTv"
+                    app:layout_constraintStart_toStartOf="@+id/characterNameTv"
+                    app:layout_constraintTop_toBottomOf="@+id/eyeColorTv" />
+
+                <TextView
+                    android:id="@+id/patronusTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:visibility="@{String.valueOf(viewModel.characterDetails.patronus).length() == 0 ? View.GONE : View.VISIBLE}"
+                    android:text='@{"Patronus: ".concat(String.valueOf(viewModel.characterDetails.patronus).toUpperCase())}'
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/characterNameTv"
+                    app:layout_constraintStart_toStartOf="@+id/characterNameTv"
+                    app:layout_constraintTop_toBottomOf="@+id/hairColorTv" />
+
+                <TextView
+                    android:id="@+id/aliveTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="10dp"
+                    android:text='@{viewModel.characterDetails.alive ? "Alive: YES" : "Alive: NO"}'
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/characterNameTv"
+                    app:layout_constraintTop_toBottomOf="@+id/patronusTv" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
