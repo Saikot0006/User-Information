@@ -3,14 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-        <import type="android.view.View"/>
-
-        <variable
-            name="item"
-            type="com.example.harrypotter.models.CharacterListResponse.CharacterListResponseItem" />
-    </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,10 +13,9 @@
         <ImageView
             android:id="@+id/characterItemIV"
             android:layout_width="80dp"
-            android:layout_height="0dp"
+            android:layout_height="80dp"
             android:scaleType="centerCrop"
-            setImage="@{item.image}"
-            android:src="@mipmap/ic_launcher_round"
+            android:src="@drawable/profile_pic"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
@@ -35,8 +26,6 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             tools:text="Harry Potter"
-            android:visibility="@{item.name != null ? View.VISIBLE : View.GONE}"
-            android:text="@{item.name}"
             android:layout_marginTop="5dp"
             android:textSize="14sp"
             android:layout_marginHorizontal="8dp"
@@ -50,8 +39,6 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             tools:text="Daniel Radcliffe"
-            android:text="@{item.actor}"
-            android:visibility="@{item.actor != null ? View.VISIBLE : View.GONE}"
             android:layout_marginTop="4dp"
             android:textSize="12sp"
             app:layout_constraintTop_toBottomOf="@+id/characterItemNameTV"
@@ -64,8 +51,6 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             tools:text="Gryffindor"
-            android:text="@{item.house}"
-            android:visibility="@{item.house != null ? View.VISIBLE : View.GONE}"
             android:layout_marginTop="4dp"
             android:textSize="12sp"
             app:layout_constraintTop_toBottomOf="@+id/characterItemActorNameTV"

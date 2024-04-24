@@ -10,7 +10,7 @@ fun setImage(imageView: ImageView,url:String?){
     try {
         Glide.with(imageView)
             .load(url)
-            .placeholder(R.mipmap.ic_launcher)
+            .placeholder(R.drawable.profile_pic)
             .into(imageView)
     }catch (_:Exception){}
 }
